@@ -1,9 +1,7 @@
 class Grid
 
-  # getter y setter
   attr_accessor :grilla
 
-  # getter
   attr_reader :filas, :columnas
 
   def initialize(path_file)
@@ -47,12 +45,11 @@ class Grid
 
 
         if((alive && alive_neighbors.between?(2,3)) || (!alive && alive_neighbors === 3))
-          p nueva_grilla[y][x] = "*"
+          nueva_grilla[y][x] = "*"
         end
       end
     end
 
-    p nueva_grilla
     self.grilla = nueva_grilla
   end
 
@@ -65,14 +62,20 @@ class Grid
 end
 
 
-
 elGrid = Grid.new('./generacion_1.txt')
 elGrid.print_grilla
-elGrid.next_generation
 puts "---------"
+elGrid.next_generation
 elGrid.print_grilla
-
-
+puts "---------"
+elGrid.next_generation
+elGrid.print_grilla
+puts "---------"
+elGrid.next_generation
+elGrid.print_grilla
+puts "---------"
+elGrid.next_generation
+elGrid.print_grilla
 
 
 
