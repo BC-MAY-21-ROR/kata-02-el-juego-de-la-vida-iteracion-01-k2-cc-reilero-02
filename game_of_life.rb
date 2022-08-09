@@ -30,8 +30,6 @@ class Grid
   def next_generation
     nueva_grilla = Array.new(filas){Array.new(columnas){"."}}
 
-    # p nueva_grilla
-
     filas.times do |y|
       columnas.times do |x|
         alive = grilla[y][x] == '*'
@@ -47,10 +45,9 @@ class Grid
           grilla[y  ][x-1] == "*" # Left
         ].count(true)
 
-        # p alive_neighbors
 
         if((alive && alive_neighbors.between?(2,3)) || (!alive && alive_neighbors === 3))
-          p nueva_grilla[y][x] == "*"
+          p nueva_grilla[y][x] = "*"
         end
       end
     end
@@ -79,11 +76,3 @@ elGrid.print_grilla
 
 
 
-
-
-
-# File.foreach('./generacion_1.txt') { |line|
-#   p line
-# }
-
-# p "........".split('')
